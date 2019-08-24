@@ -7,7 +7,7 @@
 enum INSTRFORMAT { RTYPE, ITYPE, JTYPE };
 
 struct Instruction
-{
+{ 
 	uint32_t instr;       // raw instruction machine code
 	uint8_t opcode;
 	uint8_t regSrc;
