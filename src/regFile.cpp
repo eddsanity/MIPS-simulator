@@ -13,14 +13,14 @@ void regFile::setReg(uint8_t idx, int32_t val)
 {
 	assert(idx <= 31);
 	assert(idx > 0);
-	m_reg[idx] = val;
+	m_reg[idx-1] = val;
 }
 
 int32_t regFile::getReg(uint8_t idx) const
 {
 	assert(idx <= 31);
-	assert(idx > 0);
-	return m_reg[idx];
+	assert(idx >= 0);
+	return ((idx == 0) ? m_zero : m_reg[idx - 1]);
 }
 
 int32_t regFile::getHI() const
