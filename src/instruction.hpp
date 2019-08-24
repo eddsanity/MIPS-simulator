@@ -8,7 +8,7 @@ enum INSTRFORMAT { RTYPE, ITYPE, JTYPE };
 
 struct Instruction
 {
-	uint32_t instr;
+	uint32_t instr;       // raw instruction machine code
 	uint8_t opcode;
 	uint8_t regSrc;
 	uint8_t regTgt;
@@ -24,7 +24,7 @@ struct Instruction
 	uint32_t subword(uint8_t, uint8_t) const;
 	uint32_t signExtend8bit(uint8_t) const;
 	uint32_t signExtend16bit(uint16_t) const;
-	//void deduceFormat();
+	void deduceFormat();
 };
 
 #endif

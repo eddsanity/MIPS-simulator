@@ -3,25 +3,48 @@
 
 Instruction::Instruction(uint32_t _mcode)
 {
-	instr = _mcode;            // raw 32-bit instruction
-	opcode = subword(31, 26);  // extract opcode from instruction
-	//deduceFormat();            // deduce instruction format
+	instr = _mcode;           
+	opcode = subword(31, 26);
+	deduceFormat();           
 	switch (instrFormat)
 	{
 	case RTYPE:
+		regSrc = subword(25, 21);
+		regTgt = subword(20, 16);
+		regDst = subword(15, 11);
+		shamt = subword(10, 6);
+		funct = subword(5, 0);
 
+		immed = 0;
+		adrsTgt = 0;
 		break;
 
 	case ITYPE:
+		regSrc = subword(25, 21);
+		regTgt = subword(20, 16);
+		immed = subword(15, 0);
 
+		regDst = 0;
+		shamt = 0;
+		funct = 0;
+		adrsTgt = 0;
 		break;
 
 	case JTYPE:
+		adrsTgt = subword(25, 0);
 
+		regSrc = 0;
+		regTgt = 0;
+		regDst = 0;
+		shamt = 0;
+		funct = 0;
+		immed = 0;
 		break;
 	}
 }
 
+
+// returns bits in range [leftBoundary : rightBoundary]
 uint32_t Instruction::subword(uint8_t leftBoundary, uint8_t rightBoundary) const
 {
 	assert(leftBoundary <= 31);
@@ -34,6 +57,15 @@ uint32_t Instruction::subword(uint8_t leftBoundary, uint8_t rightBoundary) const
 	result <<= leftOffset;
 	result >>= rightOffset;
 	
-	std::cout << result << "\n";
 	return result;
+}
+
+void Instruction::deduceFormat()
+{
+	if (opcode == 0)
+		instrFormat = RTYPE;
+	else if (opcode == 2 || opcode == 3 || opcode == 26)
+		instrFormat = JTYPE;
+	else
+		instrFormat = ITYPE;
 }
