@@ -60,6 +60,28 @@ uint32_t Instruction::subword(uint8_t leftBoundary, uint8_t rightBoundary) const
 	return result;
 }
 
+uint32_t Instruction::signExtend8bit(uint8_t arg) const
+{
+	bool MSB = arg >> 7;
+	if (MSB)
+	{
+		uint32_t extMask = 0b11111111111111111111111100000000;
+		return arg | extMask;
+	}
+	else return arg;
+}
+
+uint32_t Instruction::signExtend16bit(uint16_t arg) const
+{
+	bool MSB = arg >> 15;
+	if (MSB)
+	{
+		uint32_t extMask = 0b11111111111111110000000000000000;
+		return arg | extMask;
+	}
+	else return arg;
+}
+
 void Instruction::deduceFormat()
 {
 	if (opcode == 0)
