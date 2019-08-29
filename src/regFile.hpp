@@ -6,6 +6,7 @@
 
 class regFile
 {
+public:
 	regFile();
 
 	void setReg(uint8_t, int32_t);
