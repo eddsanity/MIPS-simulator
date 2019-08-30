@@ -4,7 +4,8 @@
 #include <cstdint>
 #include <cassert>
 
-enum INSTRFORMAT { RTYPE, ITYPE, JTYPE };
+#include "utility.hpp"
+
 
 struct Instruction
 { 
@@ -19,12 +20,11 @@ struct Instruction
 	uint32_t adrsTgt;
 
 	INSTRFORMAT instrFormat;
+	INSTRTOKEN instrToken;
 
 	Instruction(uint32_t);
-	uint32_t subword(uint8_t, uint8_t) const;
-	uint32_t signExtend8bit(uint8_t) const;
-	uint32_t signExtend16bit(uint16_t) const;
 	void deduceFormat();
+	void deduceInstr(); // TODO: deduce the instruction token from the instruction and set instrToken to that token. 
 };
 
 #endif
