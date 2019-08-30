@@ -47,7 +47,7 @@ void Instruction::deduceFormat()
 {
 	if (opcode == 0)
 		instrFormat = RTYPE;
-	else if (opcode == 2 || opcode == 3 || opcode == 26)
+	else if (opcode == 2 || opcode == 3)
 		instrFormat = JTYPE;
 	else
 		instrFormat = ITYPE;
