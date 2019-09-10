@@ -2,7 +2,7 @@
 
 regFile::regFile()
 {
-	for (auto i : m_reg)
+	for (int i=0; i<31; ++i)
 		m_reg[i] = 0;
 	m_HI = 0x00000000;
 	m_LO = 0x00000000;
