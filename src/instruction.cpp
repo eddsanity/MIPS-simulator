@@ -5,7 +5,6 @@ Instruction::Instruction(uint32_t _mcode)
 	instr = _mcode;           
 	opcode = subword(_mcode, 31, 26);
 	deduceFormat();
-	deduceInstr();
 	switch (instrFormat)
 	{
 	case RTYPE:
@@ -41,6 +40,7 @@ Instruction::Instruction(uint32_t _mcode)
 		immed = 0;
 		break;
 	}
+	deduceInstr();
 }
 
 
