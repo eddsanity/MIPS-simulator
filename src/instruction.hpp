@@ -20,11 +20,9 @@ struct Instruction
 	uint32_t adrsTgt;
 
 	INSTRFORMAT instrFormat;
-	INSTRTOKEN instrToken;
 
 	Instruction(uint32_t);
 	void deduceFormat();
-	void deduceInstr(); // TODO: deduce the instruction token from the instruction and set instrToken to that token. 
 };
 
 #endif
