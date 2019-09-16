@@ -9,6 +9,7 @@
 #include "instruction.hpp"
 
 #include "r_functions.hpp"
+#include "i_functions.hpp"
 
 typedef std::function<uint32_t(Instruction, Memory&, regFile&)> MIPSFunc;
 const uint8_t R_OFFSET = 0x40;
@@ -43,7 +44,28 @@ public:
         functionTable[R_OFFSET + 0x12] = MFLO;
         functionTable[R_OFFSET + 0x0C] = SYSCALL;
         // I Type initialization
-        // TODO
+        functionTable[0x08] = ADDI;
+	functionTable[0x09] = ADDIU;
+	functionTable[0x0C] = ANDI;
+	functionTable[0x0D] = ORI;
+	functionTable[0x0E] = XORI;
+	functionTable[0x04] = BEQ;
+	//functionTable[0x01] = BGEZ; -- conflict with BLTZ
+	functionTable[0x07] = BGTZ;
+	functionTable[0x06] = BLEZ;
+	//functionTable[0x01] = BLTZ; -- conflict with BGEZ
+	functionTable[0x05] = BNE;
+	functionTable[0x0A] = SLTI;
+	functionTable[0x0B] = SLTIU;
+	functionTable[0x20] = LB;
+	functionTable[0x24] = LBU;
+	functionTable[0x21] = LH;
+	functionTable[0x25] = LHU;
+	functionTable[0x0F] = LUI;
+	functionTable[0x23] = LW;
+	functionTable[0x28] = SB;
+	functionTable[0x29] = SH;
+	functionTable[0x2B] = SW;
         // J Type initialization
         // TODO
     }
