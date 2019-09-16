@@ -27,6 +27,8 @@ uint32_t subword64(uint64_t word, uint8_t leftBoundary, uint8_t rightBoundary)
 	uint8_t rightOffset = leftOffset + rightBoundary;
 	result <<= leftOffset;
 	result >>= rightOffset;
+
+	return result;
 }
 
 uint32_t signExtend8bit(uint8_t wInput)

@@ -23,9 +23,7 @@ uint32_t SRL(Instruction, Memory&, regFile&);      // 0x02
 uint32_t SLT(Instruction, Memory&, regFile&);      // 0x2A
 uint32_t SLTU(Instruction, Memory&, regFile&);     // 0x2B
 uint32_t MFHI(Instruction, Memory&, regFile&);     // 0x10
-//uint32_t MTHI(Instruction, Memory&, regFile&);   // 0x11
 uint32_t MFLO(Instruction, Memory&, regFile&);     // 0x12
-//uint32_t MTLO(Instruction, Memory&, regFile&);   // 0x13
 uint32_t SYSCALL(Instruction, Memory&, regFile&);  // 0x0C
 
 #endif

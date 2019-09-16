@@ -135,22 +135,11 @@ uint32_t MFHI (Instruction instr, Memory& mem, regFile& reg)
     return 1;
 }
 
-//uint32_t MTHI (Instruction instr, Memory& mem, regFile& reg)
-//{
-//	
-//    return 1;
-//}
-
 uint32_t MFLO (Instruction instr, Memory& mem, regFile& reg)
 {
 	reg.setReg(instr.m_regDst, reg.getLO());
     return 1;
 }
-
-//uint32_t MTLO (Instruction instr, Memory& mem, regFile& reg)
-//{
-//    return 0;
-//}
 
 uint32_t SYSCALL (Instruction instr, Memory& mem, regFile& reg)
 {

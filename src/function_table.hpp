@@ -13,7 +13,6 @@
 typedef std::function<uint32_t(Instruction, Memory&, regFile&)> MIPSFunc;
 const uint8_t R_OFFSET = 0x40;
 
-
 class FunctionTable
 {
 public:
@@ -41,20 +40,18 @@ public:
         functionTable[R_OFFSET + 0x2A] = SLT;
         functionTable[R_OFFSET + 0x2B] = SLTU;
         functionTable[R_OFFSET + 0x10] = MFHI;
-        functionTable[R_OFFSET + 0x11] = MTHI;
         functionTable[R_OFFSET + 0x12] = MFLO;
-        functionTable[R_OFFSET + 0x13] = MTLO;
         functionTable[R_OFFSET + 0x0C] = SYSCALL;
         // I Type initialization
         // TODO
-        // j Type initialization
+        // J Type initialization
         // TODO
     }
     MIPSFunc getFunc(Instruction instr)
     {
-        if(instr.instrFormat == INSTRFORMAT::RTYPE)
-            return functionTable[R_OFFSET + instr.funct];
-        return functionTable[instr.opcode];
+        if(instr.m_instrFormat == INSTRFORMAT::RTYPE)
+            return functionTable[R_OFFSET + instr.m_funct];
+        return functionTable[instr.m_opcode];
     }
 private:
     MIPSFunc functionTable[128];
