@@ -12,10 +12,9 @@ uint8_t ANDI (Instruction, Memory&, regFile&);      // 0x0C
 uint8_t ORI  (Instruction, Memory&, regFile&);      // 0x0D
 uint8_t XORI (Instruction, Memory&, regFile&);      // 0x0E
 uint8_t BEQ  (Instruction, Memory&, regFile&);      // 0x04
-uint8_t BGEZ (Instruction, Memory&, regFile&);      // 0x01, rt = $1
 uint8_t BGTZ (Instruction, Memory&, regFile&);      // 0x07, rt = $0
 uint8_t BLEZ (Instruction, Memory&, regFile&);      // 0x06, rt = $0
-uint8_t BLTZ (Instruction, Memory&, regFile&);      // 0x01, rt = $0
+uint8_t BZ   (Instruction, Memory&, regFile&);      // 0x01, rt = $0 or rt = $1
 uint8_t BNE  (Instruction, Memory&, regFile&);      // 0x05
 uint8_t SLTI (Instruction, Memory&, regFile&);      // 0x0A
 uint8_t SLTIU(Instruction, Memory&, regFile&);      // 0x0B
