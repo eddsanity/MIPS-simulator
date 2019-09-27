@@ -1,15 +1,6 @@
-#include <iostream>
-#include <functional>
+#include "test_utils.hpp"
 
-typedef std::function<void()> TestFunc;
-
-void test(TestFunc testFunc, std::string testName)
-{
-	std::cout << "Testing " << testName << std::endl;
-	testFunc();
-	std::cout << testName << " passed all tests" << std::endl;
-}
-
+// declare used tests
 void test_memory();
 
 int main()
