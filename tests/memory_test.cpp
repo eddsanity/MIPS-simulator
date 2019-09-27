@@ -1,7 +1,7 @@
 #include <cassert>
 #include "memory.hpp"
 
-int main()
+void test_memory()
 {
     Memory mem(1024);
     mem.writew(4*20, (uint32_t)0x12345678);
@@ -29,5 +29,5 @@ int main()
     mem.writeb(4*20 + 3, 0x11);
     assert(mem.readw(4*20) == 0x69966911);
 
-    return 0;
+    return;
 }
