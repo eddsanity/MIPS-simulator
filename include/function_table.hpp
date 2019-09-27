@@ -11,7 +11,7 @@
 #include "r_functions.hpp"
 #include "i_functions.hpp"
 
-typedef std::function<uint32_t(Instruction, Memory&, regFile&)> MIPSFunc;
+typedef std::function<uint8_t(Instruction, Memory&, regFile&)> MIPSFunc;
 const uint8_t R_OFFSET = 0x40;
 
 class FunctionTable
