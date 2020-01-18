@@ -9,7 +9,7 @@ Memory::Memory(uint32_t size)
 
 uint32_t Memory::readw(uint32_t addr)
 {
-    uint32_t wordAddr = addr>>2;
+    uint32_t wordAddr = addr >> 2;
     assert(wordAddr < m_memSize);
     return m_memBuf[wordAddr];
 }
@@ -19,21 +19,21 @@ uint16_t Memory::readh(uint32_t addr)
     uint32_t wordAddr = addr>>2;
     assert(wordAddr < m_memSize);
     if(wordAddr<<2 == addr)
-        return m_memBuf[wordAddr]>>16;    // first halfword
+        return m_memBuf[wordAddr] >> 16;    // first halfword
     else
         return m_memBuf[wordAddr];        // second halfword
 }
 
 uint8_t Memory::readb(uint32_t addr)
 {
-    uint32_t wordAddr = addr>>2;
+    uint32_t wordAddr = addr >> 2;
     assert(wordAddr < m_memSize);
     if(wordAddr<<2 == addr)
-        return m_memBuf[wordAddr]>>24;    // first byte
+        return m_memBuf[wordAddr] >> 24;    // first byte
     else if(wordAddr<<2 == addr-1)
-        return m_memBuf[wordAddr]>>16;    // second byte
+        return m_memBuf[wordAddr] >> 16;    // second byte
     else if(wordAddr<<2 == addr-2)
-        return m_memBuf[wordAddr]>>8;     // third byte
+        return m_memBuf[wordAddr] >> 8;     // third byte
     else
         return m_memBuf[wordAddr];        // forth byte
 }

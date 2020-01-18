@@ -1,5 +1,5 @@
-#pragma once
-
+#ifndef SIM_UTIL_H
+#define SIM_UTIL_H
 
 #include <chrono>
 #include <iostream>
@@ -21,3 +21,5 @@ togglePower(bool&);
 
 void
 printRegisterFile(regFile&);
+
+#endif
