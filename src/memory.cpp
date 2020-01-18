@@ -3,7 +3,8 @@
 Memory::Memory(uint32_t size)
 {
     m_memSize = size;
-    m_memBuf.reserve(m_memSize);
+    for (size_t i = 0; i < m_memSize; ++i)
+        m_memBuf.push_back(0);
 }
 
 uint32_t Memory::readw(uint32_t addr)
