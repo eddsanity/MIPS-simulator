@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{ffdc2eac-ddee-4c00-a457-79ccc0cd62ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CPU">
+      <UniqueIdentifier>{7f9cfa40-4e36-4d22-b086-0ce75cfbe462}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\instruction.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\memory.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\regFile.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utility.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r_functions.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\i_functions.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPU\simUtility.cpp">
+      <Filter>CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="CPU\CPU.cpp">
+      <Filter>CPU</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\function_table.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\i_functions.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\instruction.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\memory.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\r_functions.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\regFile.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\utility.hpp">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="CPU\CPU.h">
+      <Filter>CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="CPU\simUtility.h">
+      <Filter>CPU</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
