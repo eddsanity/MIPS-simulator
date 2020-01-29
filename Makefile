@@ -1,7 +1,6 @@
 HEADER_DIR = include
-SRC = $(wildcard src/*.cpp)
-TEST = $(wildcard tests/*.cpp)
+SRC = $(wildcard src/*.c)
+TEST = $(wildcard tests/*.c)
 
 test: $(SRC) $(TEST)
-	@g++ -std=c++11 -Wall -I$(HEADER_DIR) $(TEST) $(SRC) -o test \
-	&& test
+	@gcc -std=c99 -Wall -I$(HEADER_DIR) $(SRC) $(TEST) -o test && ./test && rm test
